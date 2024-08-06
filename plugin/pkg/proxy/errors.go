@@ -19,6 +19,8 @@ type Options struct {
 	ForceTCP bool
 	// PreferUDP use UDP protocol for upstream DNS request.
 	PreferUDP bool
+	// NeverTCP never use TCP protocol for upstream DNS request.
+	NeverTCP bool
 	// HCRecursionDesired sets recursion desired flag for Proxy healthcheck requests
 	HCRecursionDesired bool
 	// HCDomain sets domain for Proxy healthcheck requests

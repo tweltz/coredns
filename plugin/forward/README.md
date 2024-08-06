@@ -61,6 +61,8 @@ forward FROM TO... {
 * `prefer_udp`, try first using UDP even when the request comes in over TCP. If response is truncated
   (TC flag set in response) then do another attempt over TCP. In case if both `force_tcp` and
   `prefer_udp` options specified the `force_tcp` takes precedence.
+* `never_tcp`, override reattempting via tcp for truncated responses when using `perfer_udp`. A response
+  with TC flag set will be returned to the client.
 * `max_fails` is the number of subsequent failed health checks that are needed before considering
   an upstream to be down. If 0, the upstream will never be marked as down (nor health checked).
   Default is 2.

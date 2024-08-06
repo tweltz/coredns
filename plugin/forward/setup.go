@@ -230,6 +230,11 @@ func parseBlock(c *caddy.Controller, f *Forward) error {
 			return c.ArgErr()
 		}
 		f.opts.PreferUDP = true
+	case "never_tcp":
+		if c.NextArg() {
+			return c.ArgErr()
+		}
+		f.opts.NeverTCP = true
 	case "tls":
 		args := c.RemainingArgs()
 		if len(args) > 3 {
